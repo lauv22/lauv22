@@ -14,7 +14,7 @@ import os
 CONTENT = {
     "user": "roshan@github",
     "now": "BCA Student · ML/AI Intern @ Codesparks Technology",
-    "prev": "",
+    "prev": "",  # add a previous role/project here, or leave blank
     "location": "Birtamode, Nepal",
     "stack": "Python · Java · C · .NET · PyTorch · scikit-learn · XGBoost · OpenCV · pandas · numpy · Flask",
     "highlights": [
@@ -71,8 +71,6 @@ def build_lines() -> list[str]:
         lines.append(("prev", CONTENT["prev"]))
     if CONTENT.get("location"):
         lines.append(("location", CONTENT["location"]))
-    if CONTENT.get("focus"):
-        lines.append(("focus", CONTENT["focus"]))
     lines.append(("stack", CONTENT["stack"]))
     for i, h in enumerate(CONTENT["highlights"]):
         label = "highlights" if i == 0 else ""
@@ -80,13 +78,39 @@ def build_lines() -> list[str]:
     return lines
 
 
+def wrap_text(text: str, max_chars: int) -> list[str]:
+    """Wraps a line of text to multiple lines if it exceeds max_chars (word-boundary safe)."""
+    words = text.split(" ")
+    lines = []
+    current = ""
+    for word in words:
+        candidate = f"{current} {word}".strip()
+        if len(candidate) > max_chars and current:
+            lines.append(current)
+            current = word
+        else:
+            current = candidate
+    if current:
+        lines.append(current)
+    return lines
+
+
 def build_svg() -> str:
-    lines = build_lines()
+    raw_lines = build_lines()
     start_opacity = "1" if STATIC else "0"
+
+    # Wrap long lines (e.g. detailed highlights) so they don't overflow the panel width.
+    MAX_CHARS = 62
+    wrapped_lines = []
+    for label, value in raw_lines:
+        pieces = wrap_text(value, MAX_CHARS)
+        wrapped_lines.append((label, pieces[0] if pieces else ""))
+        for extra in pieces[1:]:
+            wrapped_lines.append(("", extra))
 
     text_elements = []
     y = 70
-    for i, (label, value) in enumerate(lines):
+    for i, (label, value) in enumerate(wrapped_lines):
         group_transform = "translate(0,0)" if STATIC else "translate(-8,0)"
         anim = fade_in_attrs(i)
         label_span = (
@@ -96,7 +120,7 @@ def build_svg() -> str:
         text_elements.append(f'''
     <g opacity="{start_opacity}" transform="{group_transform}">
       {anim}
-      <text x="24" y="{y}" font-family="monospace" font-size="14" fill="{VALUE_COLOR}" xml:space="preserve">{label_span}{escape_xml(value)}</text>
+      <text x="24" y="{y}" font-family="monospace" font-size="13" fill="{VALUE_COLOR}" xml:space="preserve">{label_span}{escape_xml(value)}</text>
     </g>''')
         y += LINE_HEIGHT
 
