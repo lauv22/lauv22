@@ -15,17 +15,21 @@ CONTENT = {
     "user": "roshan@github",
     "now": "BCA Student · ML/AI Intern @ Codesparks Technology",
     "prev": "",  # add a previous role/project here, or leave blank
-    "stack": "Python · PyTorch · OpenCV · Flask · FastAPI",
+    "location": "Birtamode, Nepal",
+    "focus": "Computer Vision · NLP · Applied ML",
+    "stack": "Python · PyTorch · OpenCV · Flask · FastAPI · scikit-learn",
     "highlights": [
-        "Built a face recognition attendance system",
-        "FIFA 2026 prediction model (PyTorch MLP)",
-        "OCR document classifier (Tesseract + Streamlit)",
+        "Face Recognition Attendance System (Flask + DeepFace)",
+        "Cardiovascular Risk Predictor (XGBoost + Streamlit)",
+        "FIFA 2026 Prediction Model (PyTorch MLP + simulator)",
+        "OCR Document Classifier (Tesseract + Nepali NLP)",
+        "Voice-to-Letter app (local LLM + real-time audio)",
     ],
 }
 # ------------------------------------------------
 
 WIDTH = 490
-HEIGHT = 320
+HEIGHT = 420
 BG_COLOR = "#0d1117"       # GitHub dark terminal background
 BORDER_COLOR = "#30363d"
 TITLE_BAR_COLOR = "#161b22"
@@ -67,6 +71,10 @@ def build_lines() -> list[str]:
     lines = [("now", CONTENT["now"])]
     if CONTENT.get("prev"):
         lines.append(("prev", CONTENT["prev"]))
+    if CONTENT.get("location"):
+        lines.append(("location", CONTENT["location"]))
+    if CONTENT.get("focus"):
+        lines.append(("focus", CONTENT["focus"]))
     lines.append(("stack", CONTENT["stack"]))
     for i, h in enumerate(CONTENT["highlights"]):
         label = "highlights" if i == 0 else ""
