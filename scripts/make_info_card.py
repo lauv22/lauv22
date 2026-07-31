@@ -14,16 +14,14 @@ import os
 CONTENT = {
     "user": "roshan@github",
     "now": "BCA Student · ML/AI Intern @ Codesparks Technology",
-    "prev": "",  # add a previous role/project here, or leave blank
+    "prev": "",
     "location": "Birtamode, Nepal",
-    "focus": "Computer Vision · NLP · Applied ML",
-    "stack": "Python · PyTorch · OpenCV · Flask · FastAPI · scikit-learn",
+    "stack": "Python · Java · C · .NET · PyTorch · scikit-learn · XGBoost · OpenCV · pandas · numpy · Flask",
     "highlights": [
-        "Face Recognition Attendance System (Flask + DeepFace)",
-        "Cardiovascular Risk Predictor (XGBoost + Streamlit)",
-        "FIFA 2026 Prediction Model (PyTorch MLP + simulator)",
-        "OCR Document Classifier (Tesseract + Nepali NLP)",
-        "Voice-to-Letter app (local LLM + real-time audio)",
+        "Face Recognition Attendance System — Flask + DeepFace, real-time webcam-based attendance, Dockerized",
+        "Cardiovascular Risk Predictor — XGBoost model trained on 300K+ patient records, Flask web app",
+        "Plainly (Text Simplifier) — converts AI-generated text into human-written style using a local LLM",
+        "OCR Document Classifier — extracts and classifies Passport/Citizenship/PAN/National ID fields via Tesseract OCR",
     ],
 }
 # ------------------------------------------------
