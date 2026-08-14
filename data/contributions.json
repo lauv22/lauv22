@@ -1,6 +1,6 @@
 {
   "username": "lauv22",
-  "fetched_at": "2026-08-13T07:55:10.676131+00:00",
+  "fetched_at": "2026-08-14T07:52:28.294279+00:00",
   "days": [
     {
       "date": "2025-08-10",
@@ -1271,6 +1271,10 @@
       "level": 1
     },
     {
+      "date": "2026-08-14",
+      "level": 0
+    },
+    {
       "date": "2025-08-16",
       "level": 0
     },
@@ -1480,7 +1484,7 @@
     }
   ],
   "stats": {
-    "current_streak": 32,
+    "current_streak": 0,
     "longest_streak": 33,
     "best_day": "2026-04-29",
     "monthly_totals": {
