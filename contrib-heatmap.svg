@@ -2956,8 +2956,8 @@
                begin="0.672s" dur="0.4s" fill="freeze" calcMode="linear" />
     </rect>
     <rect x="758" y="82" width="11" height="11" rx="2"
-          fill="#161b22" opacity="0">
-      <title></title>
+          fill="#006d32" opacity="0">
+      <title>Sep 04, 2026</title>
       <animate attributeName="opacity" from="0" to="1"
                begin="0.684s" dur="0.4s" fill="freeze" />
       <animate attributeName="y" from="82" to="90"
@@ -2972,5 +2972,5 @@
                begin="0.6960000000000001s" dur="0.4s" fill="freeze" calcMode="linear" />
     </rect>
   <text x="30" y="136" font-family="monospace" font-size="10" fill="#8b949e">Less</text><rect x="65" y="126" width="11" height="11" rx="2" fill="#161b22" /><rect x="79" y="126" width="11" height="11" rx="2" fill="#0e4429" /><rect x="93" y="126" width="11" height="11" rx="2" fill="#006d32" /><rect x="107" y="126" width="11" height="11" rx="2" fill="#26a641" /><rect x="121" y="126" width="11" height="11" rx="2" fill="#39d353" /><text x="139" y="136" font-family="monospace" font-size="10" fill="#8b949e">More</text>
-  <text x="30" y="156" font-family="monospace" font-size="11" fill="#c9d1d9">Current streak: 53d  |  Longest streak: 53d</text>
+  <text x="30" y="156" font-family="monospace" font-size="11" fill="#c9d1d9">Current streak: 54d  |  Longest streak: 54d</text>
 </svg>
